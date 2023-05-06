@@ -1,0 +1,43 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      {{> title big=true data="Program"}}
+      <div>
+        <h1>{{program.excursion.name}} - {{program.excursion.date}}</h1>
+        <h2>{{program.excursion.location.city}}, {{program.excursion.location.country}}</h2>
+        <h3>{{program.excursion.program.0.name}} - {{program.excursion.program.0.type}}</h3>
+        <p>Duration: {{program.excursion.program.0.duration}} hours</p>
+        <h4>{{program.excursion.program.0.details.museum.name}}</h4>
+        <p>{{program.excursion.program.0.details.museum.location.address}}, {{program.excursion.program.0.details.museum.location.city}}, {{program.excursion.program.0.details.museum.location.country}}</p>
+        <ul>
+          {{#each program.excursion.program.0.details.museum.exhibits}}
+          <li>{{name}} - {{description}}</li>
+          {{/each}}
+        </ul>
+        <h4>Guide: {{program.excursion.program.0.details.guide.name}} ({{program.excursion.program.0.details.guide.language}})</h4>
+        <p>Rating: {{program.excursion.program.0.details.guide.rating}}</p>
+        <h3>{{program.excursion.program.1.name}} - {{program.excursion.program.1.type}}</h3>
+        <p>Duration: {{program.excursion.program.1.duration}} hours</p>
+        <h4>{{program.excursion.program.1.details.venue.name}}</h4>
+        <p>{{program.excursion.program.1.details.venue.location.address}}, {{program.excursion.program.1.details.venue.location.city}}, {{program.excursion.program.1.details.venue.location.country}}</p>
+        <ul>
+          {{#each program.excursion.program.1.details.performers}}
+          <li>{{name}} - {{type}}</li>
+          {{/each}}
+        </ul>
+        <h4>Guide: {{program.excursion.program.1.details.guide.name}} ({{program.excursion.program.1.details.guide.language}})</h4>
+        <p>Rating: {{program.excursion.program.1.details.guide.rating}}</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
