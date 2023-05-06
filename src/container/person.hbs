@@ -1,0 +1,71 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+    {{#with person}}
+        <main>
+        <section>
+            {{> title big=true data='Person'}}
+            <ul>
+                <li><div>{{name}}</div></li>
+                <li><div>Age: ({{age}})</div></li>
+                <li><div>Gender: <b>{{gender}}</b></div></li>
+            </ul>
+            <div>
+                {{#with address}}
+                <b>Adress: </b> {{street}}, {{city}}, {{state}}, {{zip}}, {{country}}
+                {{/with}}
+            </div>
+            <div>
+                {{#each education}}
+                    {{> title data= 'Education'}}
+                    <ul>
+                        <li>
+                            <div>{{degree}}</div>
+                            <div>{{major}}</div>
+                            <div>{{university}} ({{graduationYear}})</div>
+                        </li>
+                    </ul>
+                {{/each}}
+            </div>
+            <div>
+                {{#each workExperience}}
+                    {{> title data= 'workExperience'}}
+                    <ul>
+                        <li>
+                            <div>{{company}}</div>
+                            <div>{{title}}</div>
+                            <div>{{startDate}} - {{endDate}}</div>
+                            <div>{{responsibilities}}</div>
+                            <div>Year founded: ({{year_founded}})</div>
+                            <div>{{industry}}</div>
+                            <div>
+                                {{#each employees}}
+                                    {{> title data= 'Employees'}}
+                                    <div>{{name}}</div>
+                                    <div>{{position}}</div>
+                                    <div>{{departament}}</div>
+                                        {{#each projects}}
+                                            <h4>Projects</h4>
+                                            <div>{{name}}</div>
+                                            <div>{{description}}</div>
+                                            <div>{{status}}</div>
+                                        {{/each}}
+                                {{/each}}
+                            </div>
+                        </li>
+                    </ul>
+                {{/each}}
+            </div>
+        </section>
+            
+        </main>
+    {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
