@@ -662,11 +662,11 @@ router.get('/web', function (req, res) {
   })
 })
 
-router.get('/bootstrap', function (req, res) {
+router.get('/bootstrap_tabl', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('bootstrap', {
+  res.render('bootstrap_tabl', {
     layout: 'bootstrap',
   })
   //                  ↑↑ сюди вводимо JSON дані
