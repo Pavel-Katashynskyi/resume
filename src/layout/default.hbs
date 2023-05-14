@@ -17,29 +17,30 @@
 </head>
 {{#with header}}
 <header>
-    <div>
+    <div class="mb-2">
         <h1>{{name.firstname}} {{name.lastname}}</h1>
     </div>
     <div>
         <b>{{position}}</b>
     </div>
-    <br>
-    <div>
+    
+    <div class="mb-2">
         <em>{{salary}}</em>
     </div>
-    <br>
-    <div>
+    
+    <div class="mb-2">
         <em>{{adress}}</em>
     </div>
 
-    <br>
-    <hr>
+    
+    <hr class="my-5">
 </header>
 {{/with}}
-
+<div class='mb-5'>
 {{> nav}}
+</div>
 
-<body>
+<body class="p-5">
     {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
     {{{body}}}
 
