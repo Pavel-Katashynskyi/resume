@@ -1,0 +1,127 @@
+<main>
+  <section class='mt-4'>
+    {{#with navigation}}
+      <div class='row'>
+        <div class='col-12'>
+          <div class='card'>
+            <div class='nav nav-tabs'>
+              <div class='nav-item'>
+                <a
+                  href='{{links.0.href}}'
+                  class='nav-link'
+                >{{links.0.text}}</a>
+              </div>
+              <a
+                href='{{links.1.href}}'
+                class='nav-link'
+              >{{links.1.text}}</a>
+              <a
+                href='{{links.2.href}}'
+                class='nav-link'
+              >{{links.2.text}}</a>
+              <a
+                href='{{links.3.href}}'
+                class='nav-link disabled'
+              >{{links.3.text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/with}}
+  </section>
+  <hr class='mt-4 mb-5' />
+  {{#with header}}
+    <h1>{{title}}</h1>
+    <a
+      href='{{button.link}}'
+      class='btn btn-outline-secondary'
+    >{{button.text}}</a>
+  {{/with}}
+  <hr class='mt-4 mb-5' />
+  <section>
+    {{#each goodsBlock}}
+      {{> cartGoodsItem}}
+    {{/each}}
+  </section>
+  <hr class='mt-5 mb-5' />
+  <section>
+    {{#with total}}
+      <h3>{{title}}</h3>
+      <h2>{{amount}}</h2>
+      <p>{{delivery}}</p>
+      <div class='row'>
+        <div class='col-12 mb-4'>
+          <a
+            href='{{buttons.0.link}}'
+            class='btn btn-success'
+          >{{buttons.0.text}}</a>
+        </div>
+        <div class='col-12'>
+          <a
+            href='{{buttons.1.link}}'
+            class='btn btn-outline-success'
+          >{{buttons.1.text}}</a>
+        </div>
+      </div>
+    {{/with}}
+  </section>
+  <hr class='mt-5 mb-5' />
+  <section>
+    {{#with goodsOtherBlock}}
+      <h4 class='text-center'>{{title}}</h4>
+      <div class='row'>
+        {{#each cards}}
+          <div class='col-4'>
+            <div class='card'>
+              <img
+                src='{{image}}'
+                class='card-img-top'
+                alt='Image'
+              />
+              <div class='card-body'>
+                <h5 class='card-title'>{{title}}{{> Hot}}</h5>
+                <p class='card-text'>{{description}}</p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </section>
+  <hr class='mt-4 mb-5' />
+  <section>
+    {{#with subscribe}}
+      <div>
+        <div class="card text-bg-dark mb-3">
+  <div class="card-body">
+    <h2 class="card-title">{{header}}</h2>
+    <p class="card-text">{{description}}</p>
+    {{#each buttons}}
+      <div class="col-12 mt-2">
+      <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
+      </div>
+    {{/with}}
+  </section>
+   <hr class="mb-5 mt-5">
+  <section>
+     <div class="row">
+            {{#each footer}}
+            <div class="col-2 list-group">
+                <ul class="nav flex-column">
+                    {{#each this}}
+                    <li class="nav-item ">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}} list-item" target="_blank">
+                            {{text}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+  </section>
+</main>
