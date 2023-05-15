@@ -34,6 +34,7 @@
     {{#with contacts_data}}
       <h2>{{title}}</h2>
       <div class='row'>
+        <div class="col-8">
         <div class='col'>
           <button
             class='btn btn-warning'
@@ -124,23 +125,26 @@
             >{{switch.1.text}}</label>
           </div>
         {{/with}}
-      {{!-- </div>
-      <div class="col-2">
+        </div>
+      <div class="col-3">
       <div class="card">
+        <div class="card-body">
       <div class='list-group'>
       <button
-        class='btn btn-primary '
+        class='btn btn-success me-5 col-12'
       >{{../action_block.0.text}}</button>
             <button
-        class='btn btn-danger'
+        class='btn btn-danger col-8 mt-2'
       >{{../action_block.1.text}}</button>
             <button
-        class='btn btn-info'
+        class='btn btn-info col-10 mt-2'
       >{{../action_block.2.text}}</button>
     </div>
     </div>
     </div>
-    </section> --}}
+    </div>
+      </div>
+    </section>
     {{/with}}
     
   </section>
