@@ -1,0 +1,97 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+        <header>
+          <h1>{{name}}</h1>
+          <p>{{description}}</p>
+        </header>
+          <div>{{price}} USD</div>
+          <div>{{category}}</div>
+          <h2>Features:</h2>
+          {{#with features}}
+          <ul>
+            <li><strong>Processor:</strong>
+              {{processor.brand}}
+              {{processor.model}}
+              {{processor.speed}}
+              ({{processor.cores}}
+              cores,
+              {{processor.cache}}
+              cache)</li>
+            <li><strong>Memory:</strong>
+              {{memory.type}}
+              {{memory.size}}
+              {{memory.speed}}</li>
+            <li><strong>Storage:</strong>
+              {{storage.type}}
+              {{storage.size}}</li>
+            <li><strong>Display:</strong>
+              {{display.size}}
+              {{display.resolution}}
+              {{display.technology}}
+              ({{display.color_space}}
+              color space,
+              {{display.brightness}}
+              brightness,
+              {{display.refresh_rate}}
+              refresh rate)</li>
+            <li><strong>Graphics:</strong>
+              {{graphics.brand}}
+              {{graphics.model}}
+              {{graphics.memory}}</li>
+            <li><strong>Ports:</strong>
+              <ul>
+                {{#each ports}}
+                  <li>{{this.type}}
+                    x
+                    {{this.count}}
+                    {{#if this.features}}
+                    ({{#each
+                        this.features}}
+                        {{this}}
+                        {{#unless @last}},
+                        {{/unless}}{{/each}}){{/if}}</li>
+                {{/each}}
+              </ul>
+            </li>
+            <li><strong>Battery:</strong>
+              {{battery.type}}
+              {{battery.capacity}}
+              {{battery.life}}</li>
+            <li><strong>Weight:</strong>
+              {{weight}}</li>
+            <li><strong>Dimensions:</strong>
+              {{dimensions.height}}
+              x
+              {{dimensions.width}}
+              x
+              {{dimensions.depth}}</li>
+            <li><strong>Operating System:</strong>
+              {{operating_system}}</li>
+            <li><strong>Accessories:</strong>
+              <ul class='accessories-list'>
+                {{#each accessories}}
+                  <li>{{this.name}}
+                    ({{this.price}}
+                    USD)</li>
+                {{/each}}
+              </ul>
+            </li>
+          </ul>
+          {{/with}}
+        </section>
+      </article>
+
+    </section>
+  </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

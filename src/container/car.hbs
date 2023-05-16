@@ -1,0 +1,249 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div class='card' style='width: 18rem;'>
+        <img
+          src='https://toyota-odessa.com.ua/uploads/media/dc_car_gallery/0003/11/thumb_210314_dc_car_gallery_new_slider.png.webp?v1.4.470'
+          class='card-img-top'
+          alt='Camry'
+        />
+        <div class='card-body'>
+          <h5 class='card-title'>{{make}}
+            {{model}}, ({{year}})</h5>
+          <p class='card-text'>
+            <span style='color: silver'>&#x25A0;
+            </span>
+            {{color}}</p>
+        </div>
+      </div>
+      <br>
+        <h2>Interior</h2>
+      {{#with features}}
+        <div>
+          <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <strong>Seats:</strong>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+            <li>Material: {{interior.seats.material}}</li>
+            <li>Color: {{interior.seats.color}}</li>
+            <li>Heated:{{> yes}}</li>
+            <li>Ventilated: {{> yes}}</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+            {{#with interior.dashboard}}
+            <div>
+               <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <strong>Dashboard: </strong>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         <ul>
+            <li>Material: {{material}}</li>
+            <li>Color: {{color}}</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+ 
+           <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+       <strong>Display:</strong>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+         <ul>
+              <li>{{display.type}}, {{display.size}}, {{display.resolution}}</li>
+              <li>Touchscreen: {{> yes}}</li>
+            </ul>
+      </div>
+    </div>
+  </div>
+          {{/with}}
+          {{#with interior.audio}}
+          <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <strong>Audio:</strong>
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+            <li>System: {{system}}</li>
+            <li>Speaker: ({{speakers}})</li>
+            <li>Subwoofer: {{> yes}}</li>
+            <li>Bluetooth: {{> yes}}</li>
+            <li>USB: {{> yes}}</li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+          {{/with}}
+        </div>
+        <br>
+        <h2>Exterior</h2>
+         {{#with exterior}}
+          <div>
+          <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <strong>Wheels:</strong>
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+            <li>Size: ({{wheels.size}})</li>
+            <li>Type: {{wheels.type}}</li>
+            <li>Color:{{wheels.color}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+   <div>
+          <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+        <strong>Headlight:</strong>
+      </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <ul>
+            <li>Type: {{headlights.type}}</li>
+            <li>Brightness: {{headlights.brightness}}</li>
+            <li>Automatic: {{> yes}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+          <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+        <strong>Sunroof:</strong>
+      </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li>Type: {{sunroof.type}}</li>
+            <li>Size: {{sunroof.size}}</li>
+            <li>Automatic: {{> yes}}</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div>
+         {{/with}}
+         <br>
+         <h2>Safety</h2>
+         {{#with safety}}
+          <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+        <strong>Airbags:</strong>
+      </button>
+    </h2>
+    <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li>Front: ({{airbags.front}})</li>
+            <li>Side: ({{airbags.side}})</li>
+            <li>Knee: ({{airbags.knee}})</li>
+            <li>Rear: ({{airbags.rear}})</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div>
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+        <strong>Assistance:</strong>
+      </button>
+    </h2>
+    <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <ul>
+            <li>Blind_spot_monitoring: {{> yes}}</li>
+            <li>Rear_cross_traffic_alert: {{> yes}}</li>
+            <li>Lane_departure_warning: {{> yes}}</li>
+            <li>Adaptive_cruise_control: {{> yes}}</li>
+            <li>Collision_warning: {{> yes}}</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div>
+         {{/with}}
+        {{/with}}
+        <br>
+        <h2>Engine:</h2>
+    {{#with engine}}
+      <div>Type: {{type}}</div>
+      <div>Displacement: ({{displacement}})</div>
+      <div>Horspower: ({{horsepower}}) </div>
+      <div>Torque: ({{torque}}) </div>
+      <div><strong>Transmission:</strong> {{transmission.type}} </div>
+      <div>Gears: ({{transmission.gears}})</div>
+    {{/with}}
+    <br>
+    <h2>Fuel economy:</h2>
+    {{#with fuel_economy}}
+      <div>City: ({{city}})</div>
+      <div>Highway: ({{highway}}) </div>
+      <div>Combined: ({{combined}}) </div>
+    {{/with}}
+    <br>
+    <h2>Price:</h2>
+    {{#with price}}
+      <div>Base: ({{base}}) </div>
+      <div>Destination: ({{destination}}) </div>
+      <br>
+      <h3>Option: </h3>
+      {{#with options}}
+        <div>Navigation: ({{navigation}})</div>
+        <div>Moonroof: ({{moonroof}}) </div>
+        <div>Premium paint: ({{premium_paint}}) </div>
+      {{/with}}
+      <h4>Total: ({{total}})</h4>
+    {{/with}}
+
+    
+        
+       
+
+    </section>
+  </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

@@ -1,0 +1,143 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<main>
+<div>
+    <section>
+      <div>
+        <h1>{{name}}</h1>
+      </div>
+    </section>
+  <br>
+  <hr>
+  <main>
+    <div>
+      <h2><span class="text-bg-primary">Users</span></h2>
+    </div>
+    <br>
+    {{#with users.[0]}}
+      <div>
+        
+         <div>ID: {{id}} </div> 
+          <div>{{name}} | {{gender}} | {{age}}</h2>
+      
+      </div>
+      <br>
+      <div>
+        <span class="badge text-bg-success">Friends</span>
+      </div>
+
+      <br>
+      <div>
+        {{#each friends}}
+          <ul>
+           <div>ID: {{id}} </div> 
+             <li>{{name}} | {{gender}} | {{age}} </li> 
+              </ul>
+              <ul>
+                {{#each mutual_friends}}
+                <div><strong>Mutal friends:</strong></div>
+                <div>ID: {{id}} </div> 
+                  <li> {{name}} | {{gender}} | {{age}}</li>
+                {{/each}}
+              </ul>
+          
+        {{/each}}
+      </div>
+
+
+      <br>
+     <div>
+      <span class="badge text-bg-dark">Groups</span>
+    </div>
+    <br>
+    {{#each groups}}
+      <div>
+        <ul>
+          <li>
+            <div>ID: {{id}} </div> 
+            {{name}} | {{description}}
+            <ul>
+                {{#each members}}
+                <div>ID: {{id}} </div> 
+                  <li> {{name}} | {{gender}} | {{age}}</li>
+                {{/each}}
+              </ul>
+          </li>
+        </ul>
+      </div>
+      {{/each}}
+     {{/with}}
+
+      <br>
+      <hr>
+      <div>
+        <span class="text-bg-primary">Users</span>
+      </div>
+    <br>
+     {{#with users.[1]}}
+      <div>
+        <ul>
+          <div>ID: {{id}} </div> 
+          {{name}} | {{gender}} | {{age}}
+        </ul>
+      </div>
+      <br>
+      <div>
+        <span class="badge text-bg-success">Friends</span>
+      </div>
+      <br>
+      <div>
+        {{#each friends}}
+          <li>
+              <div>ID: {{id}} </div> 
+               {{name}} | {{gender}} | {{age}} 
+              <ul>
+                {{#each mutual_friends}}
+                <div><strong>Mutal friends:</strong></div>
+                  <li>
+                    <div>ID: {{id}} </div> 
+                    {{name}} | {{gender}} | {{age}}
+                    <ul>
+                      {{#each mutual_friends}}
+                      <div><strong>Mutal friends:</strong></div>
+                      <div>ID: {{id}} </div> 
+                        <li>{{name}} | {{gender}} | {{age}}</li>
+                      {{/each}}
+                    </ul>
+                  </li>
+                {{/each}}
+              </ul>
+          </li>
+          <br>
+          <div>
+            <span class="badge text-bg-dark">Groups</span>
+          </div>
+          <br>
+          <div>
+            {{#each groups}}
+              <div>
+                <ul>
+                  <li>
+                   <div>ID: {{id}} </div> 
+                   {{name}} | {{description}}
+                    <ul>
+                      {{#each members}}
+                      <div>ID: {{id}} </div> 
+                        <li>{{name}} | {{gender}} | {{age}}</li>
+                      {{/each}}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </main>
+</div>
+  </section>
+</main>
