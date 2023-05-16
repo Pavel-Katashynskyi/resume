@@ -661,6 +661,8 @@ router.get('/web', function (req, res) {
     },
   })
 })
+router.get('/mac', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку

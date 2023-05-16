@@ -1,0 +1,228 @@
+<main>
+   <section class="row mb-3">
+        {{#with navigation}}
+        {{#each links}}
+        <div class="col-2">
+          <div class="nav"></div>
+            <div class="nav nav-tabs">
+                <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+            </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </section>
+  <section>
+    <h2 class='mt-5'>{{header}}</h2>
+    <div class='row'>
+      {{#with purchase}}
+          <div class='nav nav-tabs'>
+            {{#each tabs}}
+              <a href='{{this.href}}' class='nav-link{{#if @first}} active{{/if}}'>{{this}}</a>
+            {{/each}}
+          </div>
+          {{#with actionBlock}}
+            <div class="col-5">
+              <input class='form-control form-control-sm mt-2 me-5' placeholder="{{input.placeholder}}" />
+            </div>
+              <div class="col-1">
+            <a href="{{buttons.0.link}}" class="btn btn-success btn-sm ms-1 mt-2">{{buttons.0.text}}</a>
+              </div>
+              <div class="col-3">
+            <a href="{{buttons.1.link}}" class="btn btn-outline-success btn-sm ms-5 mt-2">{{buttons.1.text}}</a>
+              </div>
+              <div class="col-3 pe-5 ">
+            <a href="{{buttons.2.link}}" class="btn btn-danger btn-sm me-3 mt-2">{{buttons.2.text}}</a>
+              </div>
+          {{/with}}
+          <hr class='mt-4 mb-5' />
+          {{#each itemList}}
+              <div class='card mb-3' style='max-width: 720px;'>
+                <div class='row g-0'>
+    <div class='col-4 md-8'>
+      <div class='card-body'>
+        <p class='card-text'>{{number}}</p>
+        <h5 class='card-title'>{{status}}</h5>
+      </div>
+    </div>
+    <div class='col-2 md-8'>
+      <div class='card-body'>
+        <p class='card-text'>{{amount.title}}</p>
+        <h6 class='card-title mb-3'>{{amount.value}}</h6>
+      </div>
+    </div>
+    <div class='col-2 md-4'>
+      <img
+        src='{{images}}'
+        class='img-fluid rounded-start'
+        alt='Image'
+      />
+    </div>
+    <div class='col-3'>
+      <div class='card-body'>
+        <a href="{{button.link}}"
+          class='btn btn-primary mt-2 ms-2'
+        >{{button.text}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+          {{/each}}
+      {{/with}}
+    </div>
+  </section>
+     <hr class='mt-4 mb-5' />
+     {{#with userInfo}}
+        <div class="row">
+          <h3>{{title}}</h3>
+            {{#with profileData}}
+          <div class="col">
+            <div class="card">
+              <h4>{{title}}</h4>
+                <div class="card mt-4 mb-4">
+                  <div class='row'>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{fullName.surname.title}}</p>
+                        <h6 class='card-title'>{{fullName.surname.value}}</h6>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{fullName.surname.title}}</p>
+                        <h6 class='card-title mb-3'>{{fullName.name.value}}</h6>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{fullName.middleName.title}}</p>
+                        <h6 class='card-title mb-3'>{{fullName.middleName.value}}</h6>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="card mb-4">
+                  <div class='row'>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{otherInfo.birthday.title}}</p>
+                        <h6 class='card-title'>{{otherInfo.birthday.value}}</h6>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{otherInfo.sex.title}}</p>
+                        <h6 class='card-title mb-3'>{{otherInfo.sex.value}}</h6>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <p class='card-text'>{{otherInfo.language.title}}</p>
+                        <h6 class='card-title'>{{otherInfo.language.value}}</h6>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+             {{/with}}
+            <div class="card mb-5">
+                  <div class='row'>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <a href="{{buttons.0.link}}" class="btn btn-primary">{{buttons.0.text}}</a>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <a href="{{buttons.1.link}}" class="btn btn-outline-secondary">{{buttons.1.text}}</a>
+                      </div>
+                    </div>
+                    <div class='col-4'>
+                      <div class='card-body'>
+                        <a href="{{buttons.2.link}}" class="btn btn-outline-danger">{{buttons.2.text}}</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        
+            {{#with recipients}}
+            <div class="card mt-4">
+              <h4>{{title}}</h4>
+            <div class="row">
+  <div class="col-4 md-6">
+    <div class="card mt-2 mb-2">
+      <div class="card-body">
+        <h6 class="card-title">{{users.[0].name}}</h6>
+        <p class="card-subtitle mb-2 text-muted">{{users.[0].phone}}</p>
+        <a href="{{users.[0].button.link}}" class="btn btn-primary">{{users.[0].button.text}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 md-6">
+    <div class="card mt-2 mb-2">
+      <div class="card-body">
+        <h6 class="card-title">{{users.[1].name}}</h6>
+        <p class="card-subtitle mb-2 text-muted">{{users.[1].phone}}</p>
+        <a href="{{users.[1].button.link}}" class="btn btn-primary">{{users.[1].button.text}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+             {{/with}}
+             {{#with contacts}}
+            <div class="card mt-4">
+              <h4>{{title}}</h4>
+            <div class="row">
+  <div class="col-4">
+    <div class="card mt-2">
+      <div class="card-body">
+        <h6 class="card-title">{{contactData.[0].title}}</h6>
+        <p class="card-subtitle mb-2 text-muted">{{contactData.[0].value}}</p>
+        <a href="{{contactData.[0].button.link}}" class="btn btn-primary">{{contactData.[0].button.text}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-4 ">
+    <div class="card mt-2 mb-4">
+      <div class="card-body">
+        <h6 class="card-title">{{contactData.[1].title}}</h6>
+        <p class="card-subtitle mb-2 text-muted">{{contactData.[2].value}}</p>
+        <a href="{{contactData.[1].button.link}}" class="btn btn-outline-secondary">{{contactData.[1].button.text}}</a>
+      </div>
+    </div>
+  </div>
+<div class="col-4 ">
+    <div class="card mt-2">
+      <div class="card-body">
+        <h6 class="card-title">{{contactData.[2].title}}</h6>
+        <p class="card-subtitle mb-2 text-muted">{{contactData.[2].value}}</p>
+        <a href="{{contactData.[2].button.link}}" class="btn btn-outline-danger">{{contactData.[2].button.text}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+             {{/with}}
+            </div>
+     {{/with}}
+      <hr class="mb-5 mt-5">
+  <section>
+     <div class="row">
+            {{#each footer}}
+            <div class="col-2 list-group">
+                <ul class="nav flex-column">
+                    {{#each this}}
+                    <li class="nav-item">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}} list-item" target="_blank">
+                            {{text}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+  </section>
+</main>
