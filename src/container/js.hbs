@@ -1,0 +1,145 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+
+  <main>
+    <section>
+      <div>
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <ul>
+          <li><strong>Year:</strong> {{history.year}}</li>
+          <li><strong>Founder:</strong>
+            {{history.founder}}</li>
+        </ul>
+        <h2>Types</h2>
+        {{#each types}}
+          <div class='card' style='width: 18rem;'>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>{{this}}</li>
+            </ul>
+          </div>
+        {{/each}}
+        <br />
+        <h2>Syntax</h2>
+        {{#each syntax.variables}}
+          <div
+            class='btn-group'
+            role='group'
+            aria-label='Basic example'
+          >
+            <button
+              type='button'
+              class='btn btn-primary'
+            >{{this}}</button>
+          </div>
+        {{/each}}
+        <br />
+        {{#each syntax.functions}}
+          <div
+            class='btn-group'
+            role='group'
+            aria-label='Basic example'
+          >
+            <button
+              type='button'
+              class='btn btn-danger'
+            >{{this}}</button>
+          </div>
+        {{/each}}
+        <br />
+        {{#each syntax.conditionals}}
+          <div
+            class='btn-group'
+            role='group'
+            aria-label='Basic example'
+          >
+            <button
+              type='button'
+              class='btn btn-warning'
+            >{{this}}</button>
+          </div>
+        {{/each}}
+        <br />
+        {{#each syntax.loops}}
+          <div
+            class='btn-group'
+            role='group'
+            aria-label='Basic example'
+          >
+            <button
+              type='button'
+              class='btn btn-success'
+            >{{this}}</button>
+          </div>
+        {{/each}}
+        <br />
+        {{#each syntax.classes}}
+          <div
+            class='btn-group'
+            role='group'
+            aria-label='Basic example'
+          >
+            <button
+              type='button'
+              class='btn btn-dark'
+            >{{this}}</button>
+          </div>
+        {{/each}}
+        <br />
+        <br />
+        <h2>Features</h2>
+        {{#each features}}
+          <div>
+            <ul class='list-group'>
+              <li
+                class='list-group-item list-group-item-secondary'
+              >{{this}}</li>
+            </ul>
+          </div>
+        {{/each}}
+        <br>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Libraries
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">{{libraries}}</div>
+    </div>
+  </div>
+   <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Tools
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">{{tools}}</div>
+    </div>
+  </div>
+  <br>
+
+    {{#each community}}
+    <div>
+    <button type="button" class="btn btn-link">{{name}} | {{type}}</button>
+    <button type="button" class="btn btn-link"></button>
+    </div>
+    {{/each}}
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
