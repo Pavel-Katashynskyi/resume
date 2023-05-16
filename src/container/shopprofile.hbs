@@ -1,34 +1,17 @@
 <main>
-  <section class='mt-4'>
-    {{#with navigation}}
-      <div class='row'>
-        <div class='col-12'>
-          <div class='card'>
-            <div class='nav nav-tabs'>
-              <div class='nav-item'>
-                <a
-                  href='{{links.0.href}}'
-                  class='nav-link'
-                >{{links.0.text}}</a>
-              </div>
-              <a
-                href='{{links.1.href}}'
-                class='nav-link'
-              >{{links.1.text}}</a>
-              <a
-                href='{{links.2.href}}'
-                class='nav-link'
-              >{{links.2.text}}</a>
-              <a
-                href='{{links.3.href}}'
-                class='nav-link disabled'
-              >{{links.3.text}}</a>
+   <section class="row mb-3">
+        {{#with navigation}}
+        {{#each links}}
+        <div class="col-2">
+          <div class="nav"></div>
+            <div class="nav nav-tabs">
+                <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
-    {{/with}}
-  </section>
+        {{/each}}
+        {{/with}}
+    </section>
   <section>
     <h2 class='mt-5'>{{header}}</h2>
     <div class='row'>
