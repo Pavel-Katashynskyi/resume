@@ -1,12 +1,8 @@
-{{!--
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
 
-<div>
-    {{#with main}}
-    <main>
-        <section>
+   
+    <main class="row">
+         {{#with main}}
+        <section class="col m-3">
             {{> title big=true data="All skills"}}
             <ul>
                 {{#each skills}}
@@ -23,7 +19,8 @@
                 {{/each}}
             </ul>
         </section>
-        <section>
+        <section class="row">
+            <div class="col m-3">
             {{> title data="My hobbies"}}
             <ol>
                 {{#each hobbies}}
@@ -33,12 +30,7 @@
                 </li>
                 {{/each}}
                 </ul>
+                </div>
         </section>
+            {{/with}}
     </main>
-    {{/with}}
-</div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}

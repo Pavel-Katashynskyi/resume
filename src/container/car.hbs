@@ -1,11 +1,6 @@
-{{!
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
-}}
 
-<div>
-  <main>
-    <section>
+  <main class="row m-3">
+    <section class="col">
       <div class='card' style='width: 18rem;'>
         <img
           src='https://toyota-odessa.com.ua/uploads/media/dc_car_gallery/0003/11/thumb_210314_dc_car_gallery_new_slider.png.webp?v1.4.470'
@@ -21,8 +16,8 @@
             {{color}}</p>
         </div>
       </div>
-      <br>
-        <h2>Interior</h2>
+
+        <h2 class="mt-4 mb-4">Interior</h2>
       {{#with features}}
         <div>
           <div class="accordion" id="accordionExample">
@@ -99,8 +94,8 @@
 </div>
           {{/with}}
         </div>
-        <br>
-        <h2>Exterior</h2>
+
+        <h2 class="mt-4 mb-4">Exterior</h2>
          {{#with exterior}}
           <div>
           <div class="accordion" id="accordionExample">
@@ -159,8 +154,8 @@
   </div>
   <div>
          {{/with}}
-         <br>
-         <h2>Safety</h2>
+
+         <h2 class="mt-4 mb-4">Safety</h2>
          {{#with safety}}
           <div class="accordion" id="accordionExample">
   <div class="accordion-item">
@@ -203,36 +198,44 @@
   <div>
          {{/with}}
         {{/with}}
-        <br>
-        <h2>Engine:</h2>
+
+        <h2 class="mt-4 mb-3">Engine:</h2>
     {{#with engine}}
+    <div class="ms-3">
       <div>Type: {{type}}</div>
       <div>Displacement: ({{displacement}})</div>
       <div>Horspower: ({{horsepower}}) </div>
       <div>Torque: ({{torque}}) </div>
       <div><strong>Transmission:</strong> {{transmission.type}} </div>
       <div>Gears: ({{transmission.gears}})</div>
+      </div>
     {{/with}}
-    <br>
-    <h2>Fuel economy:</h2>
+
+    <h2 class="mt-4 mb-3">Fuel economy:</h2>
     {{#with fuel_economy}}
+    <div class="ms-3">
       <div>City: ({{city}})</div>
       <div>Highway: ({{highway}}) </div>
       <div>Combined: ({{combined}}) </div>
+      </div>
     {{/with}}
-    <br>
-    <h2>Price:</h2>
+    
+    <h2 class="mt-4 mb-3">Price:</h2>
     {{#with price}}
+    <div class="ms-3">
       <div>Base: ({{base}}) </div>
       <div>Destination: ({{destination}}) </div>
-      <br>
-      <h3>Option: </h3>
+      </div>
+    
+      <h3 class="mt-4 mb-3">Option: </h3>
       {{#with options}}
+      <div class="ms-3">
         <div>Navigation: ({{navigation}})</div>
         <div>Moonroof: ({{moonroof}}) </div>
         <div>Premium paint: ({{premium_paint}}) </div>
+        </div>
       {{/with}}
-      <h4>Total: ({{total}})</h4>
+      <h4 class="mt-4" style="color: red;">Total: ({{total}})</h4>
     {{/with}}
 
     
@@ -241,9 +244,3 @@
 
     </section>
   </main>
-</div>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}

@@ -1,12 +1,7 @@
-{{!
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
-}}
-
-<div>
+        <main> 
     {{#with person}}
-        <main>
-        <section>
+        <div class="row m-3">
+       <section class="col">
             {{> title big=true data='Person'}}
             <ul>
                 <li><div>{{name}}</div></li>
@@ -18,7 +13,7 @@
                 <b>Adress: </b> {{street}}, {{city}}, {{state}}, {{zip}}, {{country}}
                 {{/with}}
             </div>
-            <div>
+            <div class="mt-3">
                 {{#each education}}
                     {{> title data= 'Education'}}
                     <ul>
@@ -41,14 +36,14 @@
                             <div>{{responsibilities}}</div>
                             <div>Year founded: ({{year_founded}})</div>
                             <div>{{industry}}</div>
-                            <div>
+                            <div class="mt-3">
                                 {{#each employees}}
                                     {{> title data= 'Employees'}}
                                     <div>{{name}}</div>
                                     <div>{{position}}</div>
                                     <div>{{departament}}</div>
                                         {{#each projects}}
-                                            <h4>Projects</h4>
+                                            <h4 class="mt-3 mb-2">Projects</h4>
                                             <div>{{name}}</div>
                                             <div>{{description}}</div>
                                             <div>{{status}}</div>
@@ -60,10 +55,10 @@
                 {{/each}}
             </div>
         </section>
-            
+        </div>
+            {{/with}}    
         </main>
-    {{/with}}
-</div>
+
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
