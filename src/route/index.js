@@ -71,6 +71,14 @@ router.get('/summary', function (req, res) {
     // ↙ сюди вводимо JSON дані
   })
 })
+router.get('/bootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    layout: 'bootstrap',
+  })
+})
 
 // ================================================================
 
@@ -975,6 +983,7 @@ router.get('/task21', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
 router.get('/shophome', function (req, res) {
   // res.render генерує нам HTML сторінку
 
