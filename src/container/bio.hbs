@@ -1,38 +1,37 @@
-{{!
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
-}}
 
-<div>
-  <main>
-    <section>
+  <main class="row">
+    <section class="col m-4 text-center">
         {{> title big=true data="Biography"}}
-      <div><h3>{{name}}</h3></div>
+      <div class="mt-3 mb-5 text-center"><h3>{{name}}</h3></div>
       <div><strong>Birthday:</strong> {{birthdate}}, in {{birthplace}}</div>
-      <div><strong>Died:</strong> {{deathdate}}, in {{deathplace}}</div>
-      <div>{{nationality}}</div>
-      <div>{{occupation}}</div>
-      <div>{{known_for}}</div>
-      <br>
+      <div class="mt-3 mb-3"><strong>Died:</strong> {{deathdate}}, in {{deathplace}}</div>
+      <hr>
+      <div class="mb-2">{{nationality}}</div>
+      <div class="mb-2">{{occupation}}</div>
+      <div class="mb-2">{{known_for}}</div>
+      <hr>
       {{#each education}}
-        <div>{{degree}}</div>
-        <div>{{field}}</div>
-        <div>{{institution}} ({{year}})</div>
+        <div class="mb-2">{{degree}}</div>
+        <div class="mb-2">{{field}}</div>
+        <div class="mb-2">{{institution}} ({{year}})</div>
       {{/each}}
+      <hr>
       {{#each notable_publications}}
-        <div>{{title}} in {{year}}</div>
-        <div>{{publisher}}</div>
+        <div class="mb-2">{{title}} in {{year}}</div>
+        <div class="mb-2">{{publisher}}</div>
       {{/each}}
+      <hr>
       {{#each partners}}
-        <div>{{name}}, {{relationship}} in ({{years}})</div>
+        <div class="mb-2">{{name}}, {{relationship}} in ({{years}})</div>
       {{/each}}
+      <hr>
       {{#each awards}}
-        <div>{{title}} in ({{year}})</div>
-        <div>{{description}}</div>
+        <div class="mb-2">{{title}} in ({{year}})</div>
+        <div class="mb-2">{{description}}</div>
       {{/each}}
     </section>
   </main>
-</div>
+
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

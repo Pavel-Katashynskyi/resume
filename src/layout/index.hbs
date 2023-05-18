@@ -2,8 +2,24 @@
 Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
 І котрий обгортає код container файлів для будь-яких ендпоїнтів
 }}
-
+<!DOCTYPE>
 <html>
+  <header>
+    <div class="row">
+      <div class="col">
+        <div class="card mt-2">
+          <div class="row">
+          <div class="col-6">
+          <h1 class="ms-3">Павло Каташинський</h1>
+          </div>
+          <div class="col-6">
+          <h1 class="text-end me-3">Resume project</h1>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <head>
     <title>
@@ -18,10 +34,6 @@
       crossorigin='anonymous'
     />
   </head>
-
-  <br />
-  <hr />
-
   <body>
     {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу }}
     {{{body}}}

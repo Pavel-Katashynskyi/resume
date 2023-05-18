@@ -3,19 +3,18 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
 
-  <main>
-    <section>
+  <main class="row m-3">
+    <section class="col">
       <div>
-        <h1>{{name}}</h1>
+        <h1 class="mb-3">{{name}}</h1>
         <p>{{description}}</p>
         <ul>
           <li><strong>Year:</strong> {{history.year}}</li>
           <li><strong>Founder:</strong>
             {{history.founder}}</li>
         </ul>
-        <h2>Types</h2>
+        <h2 class="mb-4">Types</h2>
         {{#each types}}
           <div class='card' style='width: 18rem;'>
             <ul class='list-group list-group-flush'>
@@ -23,8 +22,8 @@
             </ul>
           </div>
         {{/each}}
-        <br />
-        <h2>Syntax</h2>
+ 
+        <h2 class="mt-3 mb-3">Syntax</h2>
         {{#each syntax.variables}}
           <div
             class='btn-group'
@@ -37,7 +36,7 @@
             >{{this}}</button>
           </div>
         {{/each}}
-        <br />
+        <br>
         {{#each syntax.functions}}
           <div
             class='btn-group'
@@ -89,9 +88,8 @@
             >{{this}}</button>
           </div>
         {{/each}}
-        <br />
-        <br />
-        <h2>Features</h2>
+      
+        <h2 class="mt-4 mb-3">Features</h2>
         {{#each features}}
           <div>
             <ul class='list-group'>
@@ -101,8 +99,8 @@
             </ul>
           </div>
         {{/each}}
-        <br>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+
+        <div class="accordion accordion-flush mt-3" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -137,7 +135,7 @@
 
   </main>
 
-</div>
+
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
