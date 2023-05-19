@@ -3314,5 +3314,11 @@ router.get('/shopcatalog', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+router.get('/selector1', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('selector1', {
+    layout: 'selector',
+  })
+})
 // Підключаємо роутер до бек-енду
 salary: module.exports = router
